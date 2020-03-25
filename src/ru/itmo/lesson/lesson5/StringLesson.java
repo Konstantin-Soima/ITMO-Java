@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.lesson5;
+package ru.itmo.lesson.lesson5;
 
 import java.util.Arrays;
 

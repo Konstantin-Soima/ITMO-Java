@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.lesson7;
+package ru.itmo.lesson.lesson7;
 
 public class Infantry extends BattleUnit {
     private int armor;

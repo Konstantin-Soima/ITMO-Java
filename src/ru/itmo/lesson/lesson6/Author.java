@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.lesson6;
+package ru.itmo.lesson.lesson6;
 
 public class Author { //Порядок: св-ва, конструкторы, геттеры/сетторв, остальное
     //свойства

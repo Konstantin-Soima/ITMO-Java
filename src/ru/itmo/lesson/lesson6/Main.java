@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.lesson6;
+package ru.itmo.lesson.lesson6;
 //правила нотации: доменн наоборот.проек.пакеты
 public class Main {
     //библиотека:

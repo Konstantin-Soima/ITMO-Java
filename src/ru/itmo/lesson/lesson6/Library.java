@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.lesson6;
+package ru.itmo.lesson.lesson6;
 
 //библиотека:
 //  можно добавлять книги по 1й или несколько сразу

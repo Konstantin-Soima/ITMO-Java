@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.animals;
+package ru.itmo.lesson.animals;
 
 public interface CanEat {
     void eat(CanBeEaten enemy);

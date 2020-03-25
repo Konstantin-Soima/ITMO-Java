@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.animals;
+package ru.itmo.lesson.animals;
 
 public class Mouse implements CanBeEaten {
 

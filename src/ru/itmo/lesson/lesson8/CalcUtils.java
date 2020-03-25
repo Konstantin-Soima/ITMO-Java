@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.lesson8;
+package ru.itmo.lesson.lesson8;
 
 //оператор final с классом запрещает наследование от данного класса
 public  class CalcUtils {

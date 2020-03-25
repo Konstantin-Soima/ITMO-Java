@@ -1,4 +1,4 @@
-package ru.spbexp.lesson;
+package ru.itmo.lesson;
 
 import java.util.Scanner;
 

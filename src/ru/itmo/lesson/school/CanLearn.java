@@ -1,4 +1,4 @@
-package ru.spbexp.lesson.school;
+package ru.itmo.lesson.school;
 
 public interface CanLearn {
 }
