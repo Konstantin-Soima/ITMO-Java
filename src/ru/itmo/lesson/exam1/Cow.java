@@ -13,9 +13,12 @@ public class Cow extends Pet implements CanBeEaten,CanGetResourse {
         this.weight =random.nextInt(150) +300;
         this.resource = weight/2;
         this.name="Корова";
+        this.speed = 40+random.nextInt(10);
     }
     @Override
     public int eat() {
         return this.kill();
     }
+
+
 }

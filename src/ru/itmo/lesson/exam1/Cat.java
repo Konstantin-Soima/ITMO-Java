@@ -11,6 +11,7 @@ public class Cat extends Pet{
         this.MAX_HEALTH = health;
         this.weight =random.nextInt(5) +3;
         this.name="Кошка";
+        this.speed = 48+random.nextInt(3);
     }
 
 }

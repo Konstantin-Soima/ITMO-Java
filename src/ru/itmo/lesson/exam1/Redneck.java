@@ -5,6 +5,11 @@ import java.util.Random;
 
 public class Redneck {
     public int resource = 5;
+    public String name;
+
+    Redneck(String name){
+        this.name = name;
+    }
 
     public void getResource(Pet[] pets){
         for (Pet pet: pets) {
@@ -31,6 +36,9 @@ public class Redneck {
     }
 
     public void feedAnimals(Pet pet){
-
+        Random random = new Random(new Date().getTime());
+        pet.health++;
+        if (pet.health>pet.MAX_HEALTH)
+            pet.health=pet.MAX_HEALTH;
     }
 }
