@@ -43,6 +43,7 @@ public class Farm {
         //Если ресурсов не хватит на завтра, начинаем есть животных, хотя логичнее есть животное как только оно перестало давать ресурсы
         if (todayResources==0||redneck.resource+todayResources<2){
             System.out.println("Животные больше не дают достаточно ресурсов");
+
             for (Pet pet: pets) {
                 if (pet instanceof CanBeEaten) {
                     todayResources+=((CanBeEaten) pet).eat();
