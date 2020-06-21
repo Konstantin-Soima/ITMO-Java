@@ -1,23 +1,21 @@
 package courseProject.client;
 
-import ru.itmo.lesson.lesson19.messages.SimpleMessage;
 
 import java.util.Scanner;
 
 public class Chat {
     public static void main(String[] args) {
-        //основной поток
-        Scanner scanner = new Scanner(System.in);;
-        System.out.println("Ведите имя:");
-        String username = scanner.nextLine();
-        String text;
-        while (true){
-            System.out.println("Введите текст сообщения:");
-            text = scanner.nextLine();
-            Message message = new Message(text,username);
-            message.setDateMessageCrate();
-            //тут будет отправка
-            System.out.println(message);
+
+        int port = 8090; //TODO: Все настройки в .properties файл
+        String ip = "188.242.232.214";
+        try {
+            //основной поток
+            Client client = new Client(ip,port);
+            new Thread(new Reader(client.getSocket())).start(); //поток чтения
+            client.start();
+        }
+        catch (Exception e){
+            e.printStackTrace();
         }
     }
 

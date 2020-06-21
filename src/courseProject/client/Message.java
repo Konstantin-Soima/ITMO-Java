@@ -1,5 +1,7 @@
 package courseProject.client;
 
+import ru.itmo.lesson.lesson19.messages.SimpleMessage;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -11,33 +13,51 @@ public class Message implements Serializable {
 
     private LocalDateTime dateMessageCrate;
     private String textMessage;
-    private String receiver;
+
+    public String getSender() {
+        return sender;
+    }
+
+    // private String receiver;
     private String sender;
-    private byte[] bytes;
+   // private String fileName;//имя файла
+  //  private byte[] bytes;//содержимое файла
 
     public Message(String textMessage, String sender) {
         this.textMessage = textMessage;
         this.sender = sender;
     }
 
-    public String getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(String receiver) {
-        this.receiver = receiver;
-    }
-
-    public byte[] getBytes() {
-        return bytes;
-    }
-
-    public void setBytes(byte[] bytes) {
-        this.bytes = bytes;
-    }
+//    public String getFileName() {
+//        return fileName;
+//    }
+//
+//    public void setFileName(String fileName) {
+//        this.fileName = fileName;
+//    }
+//
+//    public String getReceiver() {
+//        return receiver;
+//    }
+//
+//    public void setReceiver(String receiver) {
+//        this.receiver = receiver;
+//    }
+//
+//    public byte[] getBytes() {
+//        return bytes;
+//    }
+//
+//    public void setBytes(byte[] bytes) {
+//        this.bytes = bytes;
+//    }
 
     public void setDateMessageCrate() {
         this.dateMessageCrate = LocalDateTime.now();
+    }
+
+    public static Message getInstance(String text, String sender){
+        return new Message(text,sender);
     }
 
     @Override
