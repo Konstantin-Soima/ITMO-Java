@@ -1,7 +1,5 @@
 package courseProject.client;
 
-import ru.itmo.lesson.lesson19.messages.SimpleMessage;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

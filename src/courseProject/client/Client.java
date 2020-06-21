@@ -25,10 +25,9 @@ public class Client {
         return socket;
     }
     private void sendMessage(Message message) throws Exception {
-        outputStream = new ObjectOutputStream(socket.getOutputStream());
         message.setDateMessageCrate();
         outputStream.writeObject(message);
-     //   outputStream.flush();
+        outputStream.flush();
 //        try (Connection connection = new Connection(getSocket())){
 //            connection.sendMessage(message);
 //            System.out.println("ответ от сервера" + fromServer);
@@ -38,6 +37,7 @@ public class Client {
         System.out.println("Ведите имя:");
         String username = scanner.nextLine();
         String text;
+        outputStream = new ObjectOutputStream(socket.getOutputStream());
         while (true){
             System.out.println("Введите текст сообщения:");
             text = scanner.nextLine();
