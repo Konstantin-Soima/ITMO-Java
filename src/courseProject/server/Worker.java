@@ -23,7 +23,7 @@ public abstract class Worker implements Runnable {
 
     protected void init() throws Exception{}
 
-    protected void stop() throws Exception{}
+    protected void stop() throws Exception{Thread.currentThread().interrupt();}
 
     protected void loop() throws Exception{}
 

@@ -20,6 +20,8 @@ public class MainServer {
     public static  LinkedBlockingDeque<Message> messagesPool= new LinkedBlockingDeque<>(200);//Пул сообщений
     public static  Set<Socket> userSet =  new HashSet<>();    //Пул клиентов
     public static  Map<Socket, String> nicknameMap = new WeakHashMap<>();
+    //TODO: Убрать статику
+
     public static void main(String[] args) {
         int port = 8090;
         try {

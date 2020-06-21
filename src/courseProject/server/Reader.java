@@ -3,6 +3,7 @@ package courseProject.server;
 
 import courseProject.client.Message;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
@@ -30,8 +31,14 @@ public class Reader extends Worker {
             MainServer.messagesPool.put(clientMessage);
             if (!currentNickname.equals(clientMessage.getSender())) {
                 currentNickname = clientMessage.getSender();
-                MainServer.nicknameMap.put(socket,currentNickname);
+                MainServer.nicknameMap.put(socket, currentNickname);
             }
+        } catch (EOFException e){
+             try {
+                 stop();
+             } catch (IOException ex) {
+                 ex.printStackTrace();
+             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -45,6 +52,13 @@ public class Reader extends Worker {
     protected void stop() throws IOException {
         socket.close();
         System.out.println("Пользователь "+currentNickname+" покинул чат");
+        MainServer.userSet.remove(socket);
+        System.gc();
+        try {
+            super.stop();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
