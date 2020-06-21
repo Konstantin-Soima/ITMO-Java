@@ -44,7 +44,7 @@ public class Client {
             Message message = new Message(text,username);
             //тут будет отправка
             sendMessage(message);
-            System.out.println(message);
+            System.out.println("Сообщение отправленно в: "+message.getDateMessageCrate());
         }
     }
 }

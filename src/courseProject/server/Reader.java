@@ -28,7 +28,10 @@ public class Reader extends Worker {
             Message clientMessage = (Message) inputStream.readObject();
             System.out.println(clientMessage);
             MainServer.messagesPool.put(clientMessage);
-            currentNickname = clientMessage.getSender();
+            if (!currentNickname.equals(clientMessage.getSender())) {
+                currentNickname = clientMessage.getSender();
+                MainServer.nicknameMap.put(socket,currentNickname);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

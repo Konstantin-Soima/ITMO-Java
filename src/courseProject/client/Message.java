@@ -54,6 +54,10 @@ public class Message implements Serializable {
         this.dateMessageCrate = LocalDateTime.now();
     }
 
+    public LocalDateTime getDateMessageCrate() {
+        return dateMessageCrate;
+    }
+
     public static Message getInstance(String text, String sender){
         return new Message(text,sender);
     }

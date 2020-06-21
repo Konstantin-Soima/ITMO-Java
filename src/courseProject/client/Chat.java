@@ -1,6 +1,7 @@
 package courseProject.client;
 
 
+import java.net.ConnectException;
 import java.util.Scanner;
 
 public class Chat {
@@ -13,6 +14,9 @@ public class Chat {
             Client client = new Client(ip,port);
             new Thread(new Reader(client.getSocket())).start(); //поток чтения
             client.start();
+        }
+        catch (ConnectException e){
+            System.out.println("Не удалось подключиться к серверу, возможно сервер не доступен");
         }
         catch (Exception e){
             e.printStackTrace();
